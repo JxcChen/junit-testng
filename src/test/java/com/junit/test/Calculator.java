@@ -1,7 +1,7 @@
 package com.junit.test;
 
 public class Calculator {
-    protected static int result = 0;
+    public static int result = 0;
     /**
      * 加法
      * @param a 数字a

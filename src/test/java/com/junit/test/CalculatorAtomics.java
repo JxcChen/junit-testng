@@ -3,7 +3,7 @@ package com.junit.test;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class CalculatorAtomics {
-    protected static AtomicInteger result = new AtomicInteger();
+    public static AtomicInteger result = new AtomicInteger();
     /**
      * 加法
      * @param a 数字a
