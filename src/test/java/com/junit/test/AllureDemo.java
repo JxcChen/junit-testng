@@ -1,31 +1,41 @@
 package com.junit.test;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+
+@Epic("计算器方法测试")
+@Feature("计算器测试用例")
 public class AllureDemo {
 
 
     /**
      * 每次执行用例前进行清零操作
      */
-   /* @BeforeEach
+    @BeforeEach
     public void reset(){
         // 执行清零操作
         Calculator.resetResult();
-    }*/
-
+    }
 
     @Test
+    @Description("计算器加法测试")
+    @Story("计算器中的加法计算")
+    @DisplayName("加法测试")
+    @Severity(SeverityLevel.BLOCKER)
+    @Issue("www.ceshiren.com")
+    @Link(name = "链接到测试帖" ,type = "addlink", url ="https://ceshiren.com/t/topic/7718")
     void addTest(){
         int addResult01 = Calculator.add(4, 5);
         int addResult02 = Calculator.add(4, 5);
         int addResult03 = Calculator.add(6, 4);
+        // 在报告中添加截图
+        Allure.addAttachment("脚本名称", "加法测试用例");
+        Allure.addAttachment("pic","image/png",this.getClass().getResourceAsStream("/cat.png"),".png");
         assertAll(
                 ()->assertEquals(9,addResult01),
                 ()->assertEquals(7,addResult02),
