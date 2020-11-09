@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="E:/java_code/junit_and_testng">
+        <parameter name="num1" value="4"></parameter>
+        <parameter name="num2" value="3"></parameter>
+        <classes>
+            <class name="com.testng.test.ParametersTest"></class>
+        </classes>
+    </test>
+</suite>
